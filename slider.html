@@ -1,0 +1,36 @@
+<html style=" margin:none;">
+
+    <head>
+        <meta content="charset=utf-8">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <link href="css/fractionslider.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+        <link href="css/flexslider.css" rel="stylesheet">
+
+    </head>
+    
+    <body>
+        <!-- Place somewhere in the <body> of your page -->
+        <div class="flexslider">
+          <ul class="slides">
+
+            <li>
+              <img src="images/image1.jpg" />
+            </li>
+            <li>
+              <img src="images/image2.jpg" />
+            </li>
+
+          </ul>
+        </div>
+        
+        <script>
+            // Can also be used with $(document).ready()
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+            animation: "fade"
+          });
+        });
+        </script>
+    </body>
+</html>

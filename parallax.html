@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TheBlackSoul</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/angularApp.js"></script>
+      
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    <script>
+    $(function(){
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+      $('#ios-notice').removeClass('hidden');
+      $('.parallax-container').height( $(window).height() * 0.5 | 0 );
+    } else {
+      $(window).resize(function(){
+        var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
+        $('.parallax-container').height(parallaxHeight);
+      }).trigger('resize');
+    }
+    });
+    </script>
+    <script src="http://pixelcog.github.io/parallax.js/js/parallax.min.js"></script>
+      
+      <style>
+        body{
+            background: black;
+        }
+      </style>
+      
+  </head>
+    
+  <body ng-controller="mainCtrl">
+    
+    <!--BLACK SOUL NAV BAR DIRECTIVE-->
+      
+
+    <navbar></navbar>  
+      
+      
+
+
+      
+      
+      
+    <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="images/firstpage/339517.jpg" data-natural-width="1920" data-natural-height="1200"></div>
+
+      
+      
+      
+      
+    <section style="background:grey;height:500px;">
+      <div class="container">
+      </div>
+    </section>
+
+      
+      
+    
+      
+      
+    <section style="background:#202020;height:500px;">
+      <div class="container">
+      </div>
+    </section>
+
+      
+      
+   
+      
+      
+    <footer>
+      <div class="container">
+        BlackSoul Studios &copy; 2015 <br/>
+        Chihuahua Chihuahua Mexico
+      </div>
+    </footer>
+      
+ 
+  </body>
+</html>

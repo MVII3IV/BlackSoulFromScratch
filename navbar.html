@@ -11,21 +11,90 @@
         <style>
             .hth-mini-logo{
                 position: fixed;
-                margin: -10;
+                margin: -12px;
             }
             
             .navbar {
               border-radius: 0px;
+
             }
             
             ul > li > a{
                 top:22px;
             }
             
-            .navbar-inverse .navbar-nav > li > a {
-              color: white;
-              font-size: 20px;
-            }
+            /*NAV BAR*/
+                /*DEFAULT DEFINITION FOR THE ANCHORS*/
+                .navbar-inverse .navbar-nav >li >a {
+                  color: white;
+                  font-size: 20px;
+                  transition: 1s all;
+
+                }
+                  
+                .navbar-inverse .navbar-nav  li  a:hover {
+                    color:dimgray;
+                    transition: .5s color;
+                }
+            
+   
+            
+            /*POINTER CLASS IS THE BLUE RECTANGLE WHICH APPEARS*/
+                /*IN CHARGE OF WHEN A HOVER IS PRESSED IT ACTIVATES THE .pointer CLASS*/
+                .navbar-inverse .navbar-nav  li  a:hover + .pointer{
+                    padding-bottom: 10px;
+                    transition:  .5s padding-bottom;
+                }
+            
+                .navbar-inverse .navbar-nav > .open > a:focus {
+                  color: #fff;
+                  background-color: #202020;
+                }
+   
+
+                .pointer{
+                    width: 100%;
+                    height: 0;
+                    position: absolute;
+                    top:-1px;
+                    bottom: 0;
+                    left: 0;
+                    background: #1d79f6;
+                    transition: 1s all;
+                }
+            
+            
+            /*DROPDOWN MENU STUFF*/
+                /*BASIC COLORS*/
+                .dropdown-menu{
+                    top:70px;
+                    background-color: #202020;
+                    font-size: 14px;
+                }
+                /*FONT COLOR*/
+                .dropdown-menu > li > a {
+                    color:#9B9B9B;
+                }
+                
+                /*ON HOVER STATE COLORS*/
+                .dropdown-menu > li > a:hover {
+                    background: #202020;
+                }
+            
+                /*DROPDOWN MENU COLORS WEN IS ACTIVATED*/
+                .navbar-inverse .navbar-nav > .open > a, 
+                .navbar-inverse .navbar-nav > .open > a:hover, 
+                .navbar-inverse .navbar-nav > .open > a:focus {
+                  color: #fff;
+                  background-color: #202020;
+                }
+            
+            
+                .navbar-inverse .navbar-nav > .open > a:hover + .pointer{
+                    padding-bottom: 10px;
+                    transition:  .5s padding-bottom;
+                }
+                
             
             body{
                 font-family:'Lato', serif;
@@ -36,9 +105,9 @@
     
     <body>
         
+       
         
-        
-            <nav class="navbar navbar-inverse" style="height:100">
+            <nav class="navbar navbar-inverse navbar-fixed-top" style="height:100;margin-bottom:0px;padding-bottom:45px;">
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -49,7 +118,7 @@
                     <span class="icon-bar"></span>
                   </button>
                   <a class="navbar-brand" href="#">
-                      <img class="hth-mini-logo" src="images/BLACK%20SOUL%20LOGO.png" width="250">
+                      <img class="hth-mini-logo" src="images/BLACK%20SOUL%20LOGO.png" width="250" ng-show="true">
                   </a>
                 </div>
 
@@ -58,9 +127,18 @@
                     
                     
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">MENU</a></li>
+                   
+                      
+                    <li>
+                        <a href="#">MENU</a>
+                        <div class="pointer"></div>
+                    </li>
+                      
+                      
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DROPDOWN <span class="caret"></span></a>
+                      <div class="pointer"></div>  
+                     
                       <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
@@ -68,7 +146,15 @@
                         <li class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                       </ul>
+
                     </li>
+                      
+                      
+                      <li>
+                        <a href="#">ELEMENT</a>
+                        <div class="pointer"></div>
+                    </li>
+                      
                   </ul>
                     
                     
@@ -78,8 +164,15 @@
               </div><!-- /.container-fluid -->
             </nav>
         
-        
-        
+        <!--SCRIPT TO ENABLE AN ANIMAITON WHEN THE DROPDOWNLIST IS DEPLOYED-->
+        <script>
+            $('.navbar .dropdown').hover(function() {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            }, function() {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+            });
+        </script>
+  
     </body>
     
 </html>
